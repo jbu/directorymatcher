@@ -55,6 +55,8 @@ for pth, files in forwardmap.iteritems():
 	for f in files:
 		cnter.update(revmap[f])
 	# emit any paths that contain more than 75% identical content.
+	# again, 75% identical is taken to mean that the target dir has more than 75% of the
+	# content of this directory
 	for k, cnt in cnter.items():
 		if pth != k:
 			if cnt > .75*len(files):
